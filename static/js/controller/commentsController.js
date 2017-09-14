@@ -1,7 +1,7 @@
 define(function(require) {
-  var Ember = require('ember'),
-  Q = require('Q'),
-  dctx = require('../model/datacontext');
+  var Ember = require('ember');
+  var Q = require('Q');
+  var dctx = require('../model/datacontext');
 
   return Ember.Controller.extend({
   	comment: "",
