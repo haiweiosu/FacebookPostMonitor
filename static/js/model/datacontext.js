@@ -18,9 +18,9 @@ define(function(require) {
   var manager = new breeze.EntityManager({dataService: ds});
 
   var models = {
+    Comment: require('./Comment'),
     User: require('./User'),
-    Post: require('./Post'),
-    Comment: require('./Comment')
+    Post: require('./Post')
   };
 
   for(key in models) {
@@ -48,15 +48,5 @@ window.manager = manager;
     downloadComments: function(post_id) {
       return models.Comment.downloadComments(manager, post_id);
     }
-
-    // downloadComments: function(post_id) {
-    //   return models.Comment.downloadComments(manager, post_id);
-    // },
-    // deleteComment: function(comment_id) {
-    //   return models.Comment.deleteComment(manager, comment_id);
-    // },
-    // createComment: function(comment, post_id) {
-    //   return models.Comment.createComment(manager, comment, post_id);
-    // }
   };
 });
