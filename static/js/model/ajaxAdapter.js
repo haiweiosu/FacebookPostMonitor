@@ -29,6 +29,9 @@ define(function(require) {
       case 'DELETE':
         p = deleteObject(config.path, config.params);
         break;
+      case 'CREATE':
+        p = createObject(config.path, config.params);
+        break;
       default:
         p = Q.reject('Unsupported method');
     };
@@ -96,6 +99,10 @@ define(function(require) {
 
   function deleteObject(path, params) {
     return dispatch(path, 'DELETE', params, RETRIES);
+  }
+
+  function createObject(path, params) {
+    return dispatch(path, 'POST', params, RETRIES);
   }
 
   function dispatch(path, method, params, retries) {
