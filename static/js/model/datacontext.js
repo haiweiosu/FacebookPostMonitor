@@ -20,7 +20,7 @@ define(function(require) {
   var models = {
     User: require('./User'),
     Post: require('./Post'),
-    Comment: require('./Comment')
+    // Comment: require('./Comment')
   };
 
   for(key in models) {
