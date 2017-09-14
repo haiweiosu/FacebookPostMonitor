@@ -31,6 +31,9 @@ define(function(require) {
         },
         created_time: {
           dataType: DT.Date
+        },
+        source: {
+          dataType: DT.String
         }
       }
     });
@@ -38,6 +41,7 @@ define(function(require) {
 
   var downloadPosts = function(manager) {
     var p = {
+      fields: 'id,type,icon,picture,link,name,message,created_time,source',
       _VOXSUPMETHOD_: 'EDGE'
     };
 
