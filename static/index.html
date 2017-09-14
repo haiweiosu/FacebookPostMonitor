@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Voxsup</title>
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="lib/css/bootstrap.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="fb-root"></div>
+  <script>
+    // Asynchronous FB Connect loading.
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId      : '175885359193859', // App ID
+        channelUrl : '/channel.html', // Channel File
+        status     : true, // check login status
+        cookie     : true, // enable cookies to allow the server to access the session
+        xfbml      : true  // parse XFBML
+      });
+      if (window.ON_FB_INITIALIZED) window.ON_FB_INITIALIZED();
+      window.FB_INITIALIZED = true;
+    };
+    (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/all.js";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+  </script>
+
+  <script data-main="js/main" src="lib/js/require.js"></script>
+</body>
+</html>
