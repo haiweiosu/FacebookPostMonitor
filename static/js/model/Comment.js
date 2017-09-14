@@ -25,7 +25,7 @@ define(function(require) {
 	};
 
   var createComment = function(manager, comment, post_id) {
-	  manager.createEntity("Comment", {message: comment, createPath: `${post_id}/comments`, id: 'placeholder'});
+	  manager.createEntity("Comment", { message: comment, createPath: `${post_id}/comments`, id: 'placeholder'});
 	
 	  return manager.saveChanges();
   };
