@@ -20,7 +20,7 @@ define(function(require) {
   var models = {
     User: require('./User'),
     Post: require('./Post'),
-    // Comment: require('./Comment')
+    Comment: require('./Comment')
   };
 
   for(key in models) {
@@ -38,15 +38,25 @@ window.manager = manager;
     },
     downloadPost: function(post_id) {
       return models.Post.downloadPost(manager, post_id);
-    },
-    createComment: function(comment, post_id) {
-      return models.Comment.createComment(manager, comment, post_id);
-    },
-    deleteComment: function(comment_id) {
-      return models.Comment.deleteComment(manager, comment_id);
-    },
-    downloadComments: function(post_id) {
-      return models.Comment.downloadComments(manager, post_id);
     }
+    // createComment: function(comment, post_id) {
+    //   return models.Comment.createComment(manager, comment, post_id);
+    // },
+    // deleteComment: function(comment_id) {
+    //   return models.Comment.deleteComment(manager, comment_id);
+    // },
+    // downloadComments: function(post_id) {
+    //   return models.Comment.downloadComments(manager, post_id);
+    // }
+
+    // downloadComments: function(post_id) {
+    //   return models.Comment.downloadComments(manager, post_id);
+    // },
+    // deleteComment: function(comment_id) {
+    //   return models.Comment.deleteComment(manager, comment_id);
+    // },
+    // createComment: function(comment, post_id) {
+    //   return models.Comment.createComment(manager, comment, post_id);
+    // }
   };
 });
