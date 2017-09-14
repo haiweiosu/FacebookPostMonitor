@@ -34,7 +34,9 @@ define(function(require) {
     var entity = saveBundle.entities[0];
     var state = entity.entityAspect.entityState;
     if (state.isAdded()) {
-      throw new Error('Entity creation is not supported in this app.');
+      return ajaxImpl.ajax({path: entity.createPath, params: entity.message}, 'CREATE').then(function(resp) {
+        console.log(resp);
+      });
     } else if (state.isModified()) {
       throw new Error('Entity modification is not supported in this app.');
     } else if (state.isDeleted()) {
