@@ -34,7 +34,7 @@ define(function(require) {
     var entity = saveBundle.entities[0];
     var state = entity.entityAspect.entityState;
     if (state.isAdded()) {
-      return ajaxImpl.ajax({path: entity.createPath, params: entity.message}, 'CREATE').then(function(resp) {
+      return ajaxImpl.ajax({path: entity.createPath, params: entity.message }, 'CREATE').then(function(resp) {
         console.log(resp);
       });
     } else if (state.isModified()) {
