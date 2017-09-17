@@ -40,6 +40,7 @@ define(function(require) {
     } else if (state.isModified()) {
       throw new Error('Entity modification is not supported in this app.');
     } else if (state.isDeleted()) {
+      console.log("Attempting to delet", entity);
       return ajaxImpl.ajax({path: entity.id}, 'DELETE').then(function(resp) {
         return Q.resolve({entities: [entity], keyMappings: []});
       });
